@@ -15,7 +15,9 @@ export default function useVerify() {
         dispatch(setAuth());
       })
       .catch((error) => {
-        console.error(error.data?.detail);
+        console.error(
+          `HTTP${error.status}: Token is missing or already expired`
+        );
       })
       .finally(() => {
         dispatch(finishInitialLoad());
