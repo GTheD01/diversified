@@ -14,6 +14,9 @@ export default function useVerify() {
       .then(() => {
         dispatch(setAuth());
       })
+      .catch((error) => {
+        console.error(error.data?.detail);
+      })
       .finally(() => {
         dispatch(finishInitialLoad());
       });
