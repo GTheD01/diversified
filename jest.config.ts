@@ -11,4 +11,5 @@ export default {
       "<rootDir>/test/__ mocks __/fileMock.js",
     "\\.(css|less)$": "<rootDir>/test/__ mocks __/styleMock.js",
   },
+  setupFilesAfterEnv: ["@testing-library/jest-dom", "./jest.setup.ts"],
 };
