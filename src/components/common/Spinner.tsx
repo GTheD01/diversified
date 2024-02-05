@@ -14,7 +14,7 @@ export const Spinner = ({ sm, md, lg }: Props) => {
     "w-8 h-8": lg,
   });
   return (
-    <div role="status">
+    <div role="status" data-testid="loading-spinner">
       <ImSpinner3 className={className} />
       <span className="sr-only">Loading</span>
     </div>
