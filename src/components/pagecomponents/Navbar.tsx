@@ -1,4 +1,4 @@
-import CustomLink from "./CustomLink";
+import CustomLink from "../common/CustomLink";
 import { FaHouse } from "react-icons/fa6";
 import { FcTodoList } from "react-icons/fc";
 import { GiExpense } from "react-icons/gi";

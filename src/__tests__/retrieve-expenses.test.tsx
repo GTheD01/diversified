@@ -1,6 +1,6 @@
 // import { render } from "@testing-library/react";
 import { useRetrieveExpensesQuery } from "../redux/features/authApiSlice";
-import ExpensesList from "../components/common/ExpensesList";
+import ExpensesList from "../components/pagecomponents/ExpensesList";
 import { render, screen } from "@testing-library/react";
 import CustomProvider from "../redux/provider";
 

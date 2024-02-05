@@ -3,7 +3,7 @@ import ModalPortal from "../../components/common/ModalPortal";
 import ExpensesForm from "../../components/forms/ExpensesForm";
 import { modalClose, modalOpen } from "../../redux/features/modalSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import ExpensesList from "../../components/common/ExpensesList";
+import ExpensesList from "../../components/pagecomponents/ExpensesList";
 
 const Expenses: React.FC = () => {
   const { modalState: modalShow } = useAppSelector((state) => state.modal);

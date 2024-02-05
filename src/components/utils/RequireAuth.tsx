@@ -3,9 +3,9 @@
 import { Navigate } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { Spinner } from "../common/Spinner";
-import Navbar from "../common/Navbar";
+import Navbar from "../pagecomponents/Navbar";
 
-import UserProfile from "../common/UserProfile";
+import UserProfile from "../pagecomponents/UserProfile";
 
 interface Props {
   children: React.ReactNode;

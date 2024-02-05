@@ -3,7 +3,7 @@ import {
   useDeleteExpensesMutation,
   useRetrieveExpensesQuery,
 } from "../../redux/features/authApiSlice";
-import { Spinner } from "./Spinner";
+import { Spinner } from "../common/Spinner";
 
 const ExpensesList = () => {
   const { data: expenses, isLoading, isFetching } = useRetrieveExpensesQuery();
