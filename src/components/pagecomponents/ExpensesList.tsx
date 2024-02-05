@@ -57,7 +57,7 @@ const ExpensesList = () => {
                       onClick={() => handleDeleteExpense(expense.id)}
                       role="button"
                     >
-                      Delete
+                      🗑️
                     </td>
                   </tr>
                 );
