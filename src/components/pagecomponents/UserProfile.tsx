@@ -19,14 +19,17 @@ const UserProfile = () => {
   const { userModalState } = useAppSelector((state) => state.profile);
   const fullName = getFullName();
 
+  // Modal toggle(user profile)
   const handleOpenUserModal = () => {
     dispatch(toggleUserModal());
   };
+
+  // close modal
   const closeUserModal = () => {
-    // close modal
     dispatch(closeModal());
   };
 
+  // Handling closing Modal if click outside of the Modal
   useEffect(() => {
     const checkIfClickedOutside = (e: any) => {
       if (
@@ -43,6 +46,7 @@ const UserProfile = () => {
     };
   }, [handleOpenUserModal]);
 
+  // Logout
   const [logout] = useLogoutMutation();
 
   const handleLogout = () => {

@@ -12,7 +12,7 @@ import PasswordReset from "../pages/PasswordReset";
 import PasswordResetConfirm from "../pages/PasswordResetConfirm";
 import Error from "../pages/Error";
 import About from "../pages/auth/About";
-import TodoList from "../pages/auth/TodoList";
+import TodoList from "../pages/auth/Todos";
 import Expenses from "../pages/auth/Expenses";
 import ShortUrl from "../pages/auth/ShortUrl";
 import RedirectUrl from "../pages/RedirectUrl";
