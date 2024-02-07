@@ -10,14 +10,14 @@ import { Link } from "react-router-dom";
 import { useLogoutMutation } from "../../redux/features/authApiSlice";
 import { logout as setLogout } from "../../redux/features/authSlice";
 import { useEffect, useRef } from "react";
-import getFullName from "../helpers/getFullName";
+import getUserProfileInfo from "../helpers/getUserProfileInfo";
 
 const UserProfile = () => {
   const dispatch = useAppDispatch();
   const profileModalButtonRef = useRef<HTMLDivElement>(null);
   const profileModalRef = useRef<HTMLDivElement>(null);
   const { userModalState } = useAppSelector((state) => state.profile);
-  const fullName = getFullName();
+  const { fullName, userAvatar } = getUserProfileInfo();
 
   // Modal toggle(user profile)
   const handleOpenUserModal = () => {
@@ -67,7 +67,17 @@ const UserProfile = () => {
         onClick={handleOpenUserModal}
         ref={profileModalButtonRef}
       >
-        <CgProfile className="text-2xl" />
+        {userAvatar ? (
+          <div className="overflow-hidden rounded-full">
+            <img
+              src={userAvatar!}
+              alt="avatar"
+              className="w-[30px] h-[30px] object-cover scale-[2.8] translate-y-3 -translate-x-1"
+            />
+          </div>
+        ) : (
+          <CgProfile />
+        )}
         <div className="hidden md:block">{fullName}</div>
       </div>
       {/* {userModalState ? (
@@ -82,7 +92,17 @@ const UserProfile = () => {
           ref={profileModalRef}
         >
           <h1 className="font-bold capitalize flex items-center gap-2 sm:text-2xl sm:p-8 p-4">
-            <CgProfile />
+            {userAvatar ? (
+              <div className="overflow-hidden rounded-full">
+                <img
+                  src={userAvatar!}
+                  alt="avatar"
+                  className="w-[30px] h-[30px] object-cover scale-[2.8] translate-y-3 -translate-x-1"
+                />
+              </div>
+            ) : (
+              <CgProfile />
+            )}
             {fullName}
           </h1>
           <div className="flex justify-center mb-4 border-b-2 border-black border-dotted">

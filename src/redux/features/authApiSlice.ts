@@ -4,6 +4,7 @@ interface User {
   first_name: string;
   last_name: string;
   email: string;
+  avatar: string | null;
 }
 
 interface Todo {
@@ -37,6 +38,7 @@ const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     retrieveUser: builder.query<User, void>({
       query: () => "/users/me/",
+      providesTags: ["Avatar"],
     }),
     login: builder.mutation({
       query: ({ email, password }) => ({
@@ -148,6 +150,22 @@ const authApiSlice = apiSlice.injectEndpoints({
         url: `/${id}/`,
       }),
     }),
+    addAvatar: builder.mutation({
+      query: (formData) => ({
+        url: "/create/avatar/",
+        method: "POST",
+        body: formData,
+        formData: true,
+      }),
+      invalidatesTags: ["Avatar"],
+    }),
+    deleteAvatar: builder.mutation({
+      query: () => ({
+        url: "/create/avatar/",
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Avatar"],
+    }),
   }),
 });
 
@@ -170,4 +188,6 @@ export const {
   useRetrieveShortUrlQuery,
   useDeleteShortUrlMutation,
   useRetrieveOriginalUrlQuery,
+  useAddAvatarMutation,
+  useDeleteAvatarMutation,
 } = authApiSlice;

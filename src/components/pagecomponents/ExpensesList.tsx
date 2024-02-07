@@ -4,6 +4,7 @@ import {
   useRetrieveExpensesQuery,
 } from "../../redux/features/authApiSlice";
 import { Spinner } from "../common/Spinner";
+import { useMemo } from "react";
 
 const ExpensesList = () => {
   const { data: expenses, isLoading, isFetching } = useRetrieveExpensesQuery();
@@ -14,9 +15,13 @@ const ExpensesList = () => {
     toast.success("Expense successfully deleted.");
   };
 
-  const totalExpenses = expenses
-    ?.map((expense) => Number(expense.price))
-    .reduce((acc, val) => acc + val, 0);
+  const totalExpenses = useMemo(
+    () =>
+      expenses
+        ?.map((expense) => Number(expense.price))
+        .reduce((acc, val) => acc + val, 0),
+    [expenses]
+  );
 
   return (
     <div>
