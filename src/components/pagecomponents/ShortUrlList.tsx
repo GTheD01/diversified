@@ -4,18 +4,17 @@ import {
   useDeleteShortUrlMutation,
 } from "../../redux/features/authApiSlice";
 import { Spinner } from "../common/Spinner";
+import { Suspense } from "react";
 
 const ShortUrlList = () => {
-  const { data: shorturls, isLoading, isFetching } = useRetrieveShortUrlQuery();
+  const { data: shorturls } = useRetrieveShortUrlQuery();
 
   const [deleteShortUrl] = useDeleteShortUrlMutation();
 
   return (
     <div>
-      {isLoading || isFetching ? (
-        <Spinner />
-      ) : (
-        shorturls?.map((urls) => (
+      <Suspense fallback={<Spinner />}>
+        {shorturls?.map((urls) => (
           <div
             key={urls.id}
             className="border p-4 flex justify-between items-center"
@@ -45,8 +44,8 @@ const ShortUrlList = () => {
               </button>
             </div>
           </div>
-        ))
-      )}
+        ))}
+      </Suspense>
     </div>
   );
 };

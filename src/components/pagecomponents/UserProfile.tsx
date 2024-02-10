@@ -80,12 +80,6 @@ const UserProfile = () => {
         )}
         <div className="hidden md:block">{fullName}</div>
       </div>
-      {/* {userModalState ? (
-        <div
-          className="fixed top-0 left-0 w-full h-screen"
-          onClick={handleOpenUserModal}
-        ></div>
-      ) : null} */}
       {userModalState && (
         <div
           className="bg-sky-200  absolute top-20 right-16 flex flex-col  gap-4 rounded-3xl shadow-2xl"

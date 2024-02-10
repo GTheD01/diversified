@@ -4,9 +4,10 @@ import {
   useRetrieveTodosQuery,
 } from "../../redux/features/authApiSlice";
 import { Spinner } from "../common/Spinner";
+import { Suspense } from "react";
 
 const TodoList = () => {
-  const { data: todos, isLoading, isFetching } = useRetrieveTodosQuery();
+  const { data: todos } = useRetrieveTodosQuery();
   const [deleteTodo] = useDeleteTodosMutation();
 
   const handleDeleteTodo = (id: string) => {
@@ -16,10 +17,8 @@ const TodoList = () => {
 
   return (
     <div>
-      {isLoading || isFetching ? (
-        <Spinner />
-      ) : (
-        todos?.map((todo) => (
+      <Suspense fallback={<Spinner />}>
+        {todos?.map((todo) => (
           <div
             key={todo.id}
             className="border p-4 flex justify-between items-center"
@@ -38,8 +37,8 @@ const TodoList = () => {
               </button>
             </div>
           </div>
-        ))
-      )}
+        ))}
+      </Suspense>
     </div>
   );
 };

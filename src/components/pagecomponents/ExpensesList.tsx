@@ -1,13 +1,14 @@
+import { Suspense, useMemo } from "react";
 import { toast } from "react-toastify";
+
 import {
   useDeleteExpensesMutation,
   useRetrieveExpensesQuery,
 } from "../../redux/features/authApiSlice";
 import { Spinner } from "../common/Spinner";
-import { useMemo } from "react";
 
 const ExpensesList = () => {
-  const { data: expenses, isLoading, isFetching } = useRetrieveExpensesQuery();
+  const { data: expenses } = useRetrieveExpensesQuery();
   const [deleteExpense] = useDeleteExpensesMutation();
 
   const handleDeleteExpense = (id: string) => {
@@ -25,9 +26,7 @@ const ExpensesList = () => {
 
   return (
     <div>
-      {isLoading || isFetching ? (
-        <Spinner />
-      ) : (
+      <Suspense fallback={<Spinner />}>
         <table className="border border-black border-collapse w-full mt-4">
           <thead>
             <tr className="*:border-black *:border *:border-collapse *:border-solid *:p-2">
@@ -70,7 +69,7 @@ const ExpensesList = () => {
               .reverse()}
           </tbody>
         </table>
-      )}
+      </Suspense>
 
       <div className="m-4">
         <p className="font-semibold">
