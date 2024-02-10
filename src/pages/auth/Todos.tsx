@@ -34,12 +34,8 @@ const Todos = () => {
         </button>
         {modalShow && (
           <div>
-            <ModalPortal show={modalShow} onClick={closeModal}>
-              <Modal
-                onClick={closeModal}
-                label="Add Todo"
-                children={<TodoForm />}
-              />
+            <ModalPortal onClick={closeModal}>
+              <Modal label="Add Todo" children={<TodoForm />} />
             </ModalPortal>
           </div>
         )}

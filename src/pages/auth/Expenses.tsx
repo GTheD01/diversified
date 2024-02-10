@@ -9,8 +9,7 @@ const Expenses: React.FC = () => {
   const { modalState: modalShow } = useAppSelector((state) => state.modal);
   const dispatch = useAppDispatch();
 
-  const openModal = (e: any) => {
-    e.preventDefault();
+  const openModal = () => {
     dispatch(modalOpen());
   };
 
@@ -32,8 +31,8 @@ const Expenses: React.FC = () => {
 
       {modalShow && (
         <div>
-          <ModalPortal show={modalShow} onClick={closeModal}>
-            <Modal onClick={closeModal} label="Add Expense">
+          <ModalPortal onClick={closeModal}>
+            <Modal label="Add Expense">
               <ExpensesForm />
             </Modal>
           </ModalPortal>
