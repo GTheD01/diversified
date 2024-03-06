@@ -27,9 +27,9 @@ const ExpensesList = () => {
   return (
     <div>
       <Suspense fallback={<Spinner />}>
-        <table className="border border-black border-collapse w-full mt-4">
+        <table className="border border-black border-collapse w-full mt-4 dark:border-white">
           <thead>
-            <tr className="*:border-black *:border *:border-collapse *:border-solid *:p-2">
+            <tr className="*:border-black *:border *:border-collapse *:border-solid *:p-2 dark:text-white dark:*:border-white">
               <th>Expense</th>
               <th>Price</th>
               <th>Date</th>
@@ -44,7 +44,7 @@ const ExpensesList = () => {
 
                 return (
                   <tr
-                    className="*:border-black *:border *:border-collapse *:border-solid *:p-2 odd:bg-sky-100"
+                    className="*:border-black *:border *:border-collapse *:border-solid *:p-2 odd:bg-sky-100 dark:even:bg-white dark:*:border-white"
                     key={expense.created_at}
                     role="row"
                   >
@@ -72,7 +72,7 @@ const ExpensesList = () => {
       </Suspense>
 
       <div className="m-4">
-        <p className="font-semibold">
+        <p className="font-semibold dark:text-white">
           Total:{" "}
           {Number(totalExpenses)
             ?.toFixed(2)

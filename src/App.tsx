@@ -9,12 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <>
-      <CustomProvider>
-        <Setup />
-        <RouterProvider router={router} />
-      </CustomProvider>
-    </>
+    <CustomProvider>
+      <Setup />
+      <RouterProvider router={router} />
+    </CustomProvider>
   );
 }
 

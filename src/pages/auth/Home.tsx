@@ -12,7 +12,7 @@ const Home = () => {
     );
   }
   return (
-    <h1 className="lg:text-3xl sm:text-2xl text-center font-semibold">
+    <h1 className="lg:text-3xl sm:text-2xl text-center font-semibold dark:text-white">
       Welcome to our page,{" "}
       <span className="text-sky-400 font-bold">{user?.first_name}</span>
     </h1>

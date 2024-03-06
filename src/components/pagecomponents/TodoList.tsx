@@ -24,13 +24,15 @@ const TodoList = () => {
             className="border p-4 flex justify-between items-center"
           >
             <div>
-              <h1 className="font-semibold capitalize mb-2">{todo.label}</h1>
-              <p>- {todo.description}</p>
+              <h1 className="font-semibold capitalize mb-2 dark:text-white">
+                {todo.label}
+              </h1>
+              <p className="dark:text-white">- {todo.description}</p>
             </div>
             <div>
               <button
                 type="submit"
-                className="shadow-md rounded-lg"
+                className="shadow-md rounded-lg dark:text-white"
                 onClick={() => handleDeleteTodo(todo.id)}
               >
                 🗑️ Delete

@@ -62,7 +62,7 @@ const UserAvatar = ({ user }: { user: User | undefined }) => {
         <Form method="POST" onSubmit={addAvatarHandler} className="flex">
           <label
             htmlFor="fileInput"
-            className="border px-4 py-3 rounded-md cursor-pointer self-center hover:bg-gray-300"
+            className="border px-4 py-3 rounded-md cursor-pointer self-center hover:bg-gray-300 dark:bg-white dark:hover:bg-white/70"
           >
             {selectedFile?.name ? (
               <>{selectedFile?.name}</>

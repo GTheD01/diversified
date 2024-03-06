@@ -15,12 +15,12 @@ export default function List({ config }: Props) {
       {config.map(({ label, value }) => (
         <li className="flex justify-between gap-x-6 py-5" key={label}>
           <div>
-            <p className="lg:text-lg md:text-sm text-xs font-semibold leading-6 text-gray-900">
+            <p className="lg:text-lg md:text-sm text-xs font-semibold leading-6 text-gray-900 dark:text-white">
               {label}
             </p>
           </div>
           <div>
-            <p className="lg:text-lg md:text-sm text-xs font-semibold leading-6 text-gray-900">
+            <p className="lg:text-lg md:text-sm text-xs font-semibold leading-6 text-gray-900 dark:text-white">
               {value || <Spinner sm />}
             </p>
           </div>

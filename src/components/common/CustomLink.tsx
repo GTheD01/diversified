@@ -13,8 +13,8 @@ export default function CustomLink({ to, label, icon }: NavLinkProps) {
       to={to}
       className={({ isActive }) =>
         isActive
-          ? `bg-sky-200 p-2 lg:text-2xl text-center sm:text-xl font-semibold flex items-center gap-2`
-          : `lg:text-xl hover:bg-sky-100 p-2 sm:text-lg flex items-center gap-2`
+          ? `bg-sky-200 p-2 lg:text-2xl text-center sm:text-xl font-semibold flex items-center gap-2 dark:bg-sky-400`
+          : `lg:text-xl hover:bg-sky-100 p-2 sm:text-lg flex items-center gap-2 dark:hover:bg-sky-300`
       }
     >
       {icon}

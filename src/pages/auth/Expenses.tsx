@@ -20,7 +20,7 @@ const Expenses: React.FC = () => {
   return (
     <>
       <div className="flex flex-col gap-8">
-        <div className="text-3xl font-bold ">Expenses</div>
+        <div className="text-3xl font-bold dark:text-white">Expenses</div>
         <button
           className="bg-sky-100 hover:bg-sky-50 rounded-lg px-4 py-2 font-semibold focus-visible:outline-none mb-8"
           onClick={openModal}

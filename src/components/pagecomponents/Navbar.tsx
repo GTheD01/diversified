@@ -8,7 +8,7 @@ import { FaLink } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className="m-4">
-      <nav className="flex flex-col gap-2 ">
+      <nav className="flex flex-col gap-2 dark:text-white">
         <CustomLink to="/home" label="Home" icon={<FaHouse />} />
         <CustomLink
           to="/about"

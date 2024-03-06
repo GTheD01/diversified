@@ -24,7 +24,9 @@ const Todos = () => {
   return (
     <>
       <div className="flex flex-col gap-8">
-        <div className="lg:text-3xl sm:text-2xl font-bold">Todo List</div>
+        <div className="lg:text-3xl sm:text-2xl font-bold dark:text-white">
+          Todo List
+        </div>
         <button
           className="bg-sky-100 hover:bg-sky-50 rounded-lg px-4 py-2 font-semibold focus-visible:outline-none flex items-center justify-center gap-2"
           onClick={openModal}
