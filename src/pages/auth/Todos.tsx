@@ -1,9 +1,9 @@
 import Modal from "../../components/common/Modal";
-import ModalPortal from "../../components/common/ModalPortal";
+
 import TodoForm from "../../components/forms/TodoForm";
 import TodoList from "../../components/pagecomponents/TodoList";
 
-import { modalClose, modalOpen } from "../../redux/features/modalSlice";
+import { modalOpen } from "../../redux/features/modalSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 import { IoAddCircle } from "react-icons/io5";
@@ -15,10 +15,6 @@ const Todos = () => {
 
   const openModal = () => {
     dispatch(modalOpen());
-  };
-
-  const closeModal = () => {
-    dispatch(modalClose());
   };
 
   return (
@@ -35,11 +31,9 @@ const Todos = () => {
           Add To-Do
         </button>
         {modalShow && (
-          <div>
-            <ModalPortal onClick={closeModal}>
-              <Modal label="Add Todo" children={<TodoForm />} />
-            </ModalPortal>
-          </div>
+          <Modal label="Add Todo">
+            <TodoForm />
+          </Modal>
         )}
 
         <TodoList />

@@ -1,7 +1,6 @@
 import Modal from "../../components/common/Modal";
-import ModalPortal from "../../components/common/ModalPortal";
 import ExpensesForm from "../../components/forms/ExpensesForm";
-import { modalClose, modalOpen } from "../../redux/features/modalSlice";
+import { modalOpen } from "../../redux/features/modalSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import ExpensesList from "../../components/pagecomponents/ExpensesList";
 
@@ -11,10 +10,6 @@ const Expenses: React.FC = () => {
 
   const openModal = () => {
     dispatch(modalOpen());
-  };
-
-  const closeModal = () => {
-    dispatch(modalClose());
   };
 
   return (
@@ -30,13 +25,9 @@ const Expenses: React.FC = () => {
       </div>
 
       {modalShow && (
-        <div>
-          <ModalPortal onClick={closeModal}>
-            <Modal label="Add Expense">
-              <ExpensesForm />
-            </Modal>
-          </ModalPortal>
-        </div>
+        <Modal label="Add Expense">
+          <ExpensesForm />
+        </Modal>
       )}
 
       <ExpensesList />
