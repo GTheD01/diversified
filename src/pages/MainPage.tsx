@@ -10,7 +10,10 @@ const MainPage = () => {
         <Navigate to="/home" />
       ) : (
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl mb-6">Welcome to our page</h1>
+          <h1 className="text-9xl mb-12 from-white to-cyan-500 bg-gradient-to-br bg-clip-text text-transparent">
+            Diversified
+          </h1>
+          <h2 className="text-3xl mb-6">Welcome to our page</h2>
           <div className="flex gap-4">
             <div>
               <Link
