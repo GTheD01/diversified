@@ -25,8 +25,12 @@ export default function useShortUrl() {
       .then(() => {
         toast.success("Short Url successfully created.");
       })
-      .catch(() => {
-        toast.error("Failed to add Short Url");
+      .catch((error) => {
+        if (error && error.data.error) {
+          toast.error(error.data.error);
+        } else {
+          toast.error("Failed to add Short Url");
+        }
       })
       .finally(() => {
         setFormData({ original_url: "" });

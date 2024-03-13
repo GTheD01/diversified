@@ -31,8 +31,13 @@ export default function useExpenses() {
         dispatch(modalClose());
         toast.success("Expense successfully created.");
       })
-      .catch(() => {
-        toast.error("Failed to add Expense");
+      .catch((error) => {
+        console.error(error);
+        if (error && error.data.error) {
+          toast.error(error.data.error);
+        } else {
+          toast.error("Failed to add Expense");
+        }
       });
   };
 

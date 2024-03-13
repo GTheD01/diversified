@@ -31,8 +31,12 @@ export default function useTodos() {
         dispatch(modalClose());
         toast.success("Todo successfully created.");
       })
-      .catch(() => {
-        toast.error("Failed to add Todo");
+      .catch((error) => {
+        if (error && error.data.error) {
+          toast.error(error.data.error);
+        } else {
+          toast.error("Failed to add todo.");
+        }
       });
   };
 
