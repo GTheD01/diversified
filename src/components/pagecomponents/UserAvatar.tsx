@@ -3,9 +3,9 @@ import {
   useAddAvatarMutation,
   useDeleteAvatarMutation,
 } from "../../redux/features/authApiSlice";
-import { toast } from "react-toastify";
 import { User } from "../../redux/features/authApiSlice";
 import { Form } from "react-router-dom";
+import { toast } from "react-toastify";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 
 const UserAvatar = ({ user }: { user: User | undefined }) => {

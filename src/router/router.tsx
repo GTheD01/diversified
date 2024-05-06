@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/auth/Home";
 
+import Home from "../pages/auth/Home";
 import Login from "../pages/Login";
 import Root from "../pages/Root";
 import Register from "../pages/Register";
 import ActivationPage from "../pages/Activation";
 import ActivationError from "../pages/ActivationError";
-import { RequireAuth } from "../components/utils/RequireAuth";
 import MainPage from "../pages/MainPage";
 import PasswordReset from "../pages/PasswordReset";
 import PasswordResetConfirm from "../pages/PasswordResetConfirm";
@@ -16,6 +15,8 @@ import TodoList from "../pages/auth/Todos";
 import Expenses from "../pages/auth/Expenses";
 import ShortUrl from "../pages/auth/ShortUrl";
 import RedirectUrl from "../pages/RedirectUrl";
+
+import { RequireAuth } from "../components/utils/RequireAuth";
 
 export const router = createBrowserRouter([
   {
